@@ -44,15 +44,4 @@
         <field name="binding_view_types">form,list</field>
     </record>
 
-    <!-- Bouton dans l'en-tête de la fiche produit -->
-    <record id="product_template_form_barcode_print" model="ir.ui.view">
-        <field name="name">product.template.form.barcode.print</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_form_view"/>
-        <field name="arch" type="xml">
-            <xpath expr="//header" position="inside">
-                <button name="%(action_barcode_print_template)d" type="action" string="Imprimer code-barre"/>
-            </xpath>
-        </field>
-    </record>
 </odoo>
