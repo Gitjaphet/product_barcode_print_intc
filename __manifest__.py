@@ -5,7 +5,10 @@
     'author': 'INTC',
     'license': 'LGPL-3',
     'depends': ['product'],
-    'data': [],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/barcode_print_wizard_views.xml',
+    ],
     'installable': True,
     'application': False,
 }

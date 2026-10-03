@@ -54,3 +54,16 @@ class ProductBarcodePrintWizard(models.TransientModel):
     def _build_escpos_base64(self):
         """Même chose, en texte base64 : le format pour l'envoyer au navigateur."""
         return base64.b64encode(self._build_escpos()).decode()
+
+    def action_download(self):
+        """Test : télécharge les octets ESC/POS dans un fichier .bin."""
+        attachment = self.env['ir.attachment'].create({
+            'name': 'etiquettes.bin',
+            'raw': self._build_escpos(),
+            'mimetype': 'application/octet-stream',
+        })
+        return {
+            'type': 'ir.actions.act_url',
+            'url': f'/web/content/{attachment.id}?download=true',
+            'target': 'self',
+        }
