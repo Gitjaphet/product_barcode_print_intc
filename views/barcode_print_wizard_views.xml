@@ -17,7 +17,8 @@
                     <field name="show_price"/>
                 </group>
                 <footer>
-                    <button name="action_download" type="object" string="Télécharger (test)" class="btn-primary"/>
+                    <button name="action_print" type="object" string="Imprimer" class="btn-primary"/>
+                    <button name="action_download" type="object" string="Télécharger (.bin)" class="btn-secondary"/>
                     <button string="Annuler" special="cancel" class="btn-secondary"/>
                 </footer>
             </form>

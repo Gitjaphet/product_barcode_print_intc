@@ -67,3 +67,16 @@ class ProductBarcodePrintWizard(models.TransientModel):
             'url': f'/web/content/{attachment.id}?download=true',
             'target': 'self',
         }
+
+    def action_print(self):
+        """Envoie les étiquettes au pont d'impression local, via le navigateur."""
+        url = self.env['ir.config_parameter'].sudo().get_param(
+            'product_barcode_print_intc.bridge_url', 'http://localhost:8080')
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'product_barcode_print_intc.print',
+            'params': {
+                'url': url.rstrip('/') + '/rawprint',
+                'data': self._build_escpos_base64(),
+            },
+        }
