@@ -1,6 +1,6 @@
 {
     'name': 'INTC Product Barcode Print',
-    'version': '19.0.1.2.0',
+    'version': '19.0.1.3.0',
     'summary': "Impression de codes-barres produits sur imprimante thermique ESC/POS",
     'author': 'INTC',
     'license': 'LGPL-3',
